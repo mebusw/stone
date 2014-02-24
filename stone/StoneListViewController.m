@@ -1,18 +1,18 @@
 //
-//  CompanyViewController.m
+//  StoneListViewController.m
 //  stone
 //
 //  Created by Jacky Shen on 14-2-24.
 //  Copyright (c) 2014年 JackyShen. All rights reserved.
 //
 
-#import "CompanyViewController.h"
+#import "StoneListViewController.h"
 
-@interface CompanyViewController ()
+@interface StoneListViewController ()
 
 @end
 
-@implementation CompanyViewController
+@implementation StoneListViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -58,8 +58,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //static NSString *CellIdentifier = @"Cell";
-    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%d", indexPath.row];
+    static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
