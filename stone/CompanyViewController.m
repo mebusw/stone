@@ -1,18 +1,18 @@
 //
-//  SearchViewController.m
+//  CompanyViewController.m
 //  stone
 //
 //  Created by Jacky Shen on 14-2-24.
 //  Copyright (c) 2014年 JackyShen. All rights reserved.
 //
 
-#import "SearchViewController.h"
+#import "CompanyViewController.h"
 
-@interface SearchViewController ()
+@interface CompanyViewController ()
 
 @end
 
-@implementation SearchViewController
+@implementation CompanyViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,10 +40,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction) backToLandingPage: (id)sender {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -57,16 +53,16 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    //static NSString *CellIdentifier = @"Cell";
+    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%d", indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = @"热词1";
     
     return cell;
 }

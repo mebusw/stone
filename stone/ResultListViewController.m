@@ -1,18 +1,18 @@
 //
-//  SearchViewController.m
+//  ResultListViewController.m
 //  stone
 //
 //  Created by Jacky Shen on 14-2-24.
 //  Copyright (c) 2014年 JackyShen. All rights reserved.
 //
 
-#import "SearchViewController.h"
+#import "ResultListViewController.h"
 
-@interface SearchViewController ()
+@interface ResultListViewController ()
 
 @end
 
-@implementation SearchViewController
+@implementation ResultListViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,10 +40,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction) backToLandingPage: (id)sender {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -66,7 +62,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = @"热词1";
     
     return cell;
 }
