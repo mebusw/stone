@@ -31,6 +31,9 @@
 		85D1309618BB7BD8001E83E1 /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D1309518BB7BD8001E83E1 /* CompanyViewController.m */; };
 		85D1309918BB8626001E83E1 /* StoneListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D1309818BB8626001E83E1 /* StoneListViewController.m */; };
 		85D1309F18BB8839001E83E1 /* StoneDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D1309E18BB8838001E83E1 /* StoneDetailViewController.m */; };
+		85D130A218BB972C001E83E1 /* CompanyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D130A118BB972C001E83E1 /* CompanyMapViewController.m */; };
+		85D130A518BB9FAD001E83E1 /* StoneEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D130A418BB9FAD001E83E1 /* StoneEditViewController.m */; };
+		85D130A818BBA012001E83E1 /* StoneInventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D130A718BBA012001E83E1 /* StoneInventoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,12 @@
 		85D1309818BB8626001E83E1 /* StoneListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoneListViewController.m; sourceTree = "<group>"; };
 		85D1309D18BB8838001E83E1 /* StoneDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoneDetailViewController.h; path = ../StoneDetailViewController.h; sourceTree = "<group>"; };
 		85D1309E18BB8838001E83E1 /* StoneDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoneDetailViewController.m; path = ../StoneDetailViewController.m; sourceTree = "<group>"; };
+		85D130A018BB972C001E83E1 /* CompanyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyMapViewController.h; sourceTree = "<group>"; };
+		85D130A118BB972C001E83E1 /* CompanyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyMapViewController.m; sourceTree = "<group>"; };
+		85D130A318BB9FAD001E83E1 /* StoneEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoneEditViewController.h; sourceTree = "<group>"; };
+		85D130A418BB9FAD001E83E1 /* StoneEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoneEditViewController.m; sourceTree = "<group>"; };
+		85D130A618BBA012001E83E1 /* StoneInventoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoneInventoryViewController.h; sourceTree = "<group>"; };
+		85D130A718BBA012001E83E1 /* StoneInventoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoneInventoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +153,12 @@
 				8556E73F18B9FD480060D060 /* AppDelegate.h */,
 				8556E74018B9FD480060D060 /* AppDelegate.m */,
 				8556E74218B9FD480060D060 /* Main.storyboard */,
+				85D130A618BBA012001E83E1 /* StoneInventoryViewController.h */,
+				85D130A718BBA012001E83E1 /* StoneInventoryViewController.m */,
+				85D130A318BB9FAD001E83E1 /* StoneEditViewController.h */,
+				85D130A418BB9FAD001E83E1 /* StoneEditViewController.m */,
+				85D130A018BB972C001E83E1 /* CompanyMapViewController.h */,
+				85D130A118BB972C001E83E1 /* CompanyMapViewController.m */,
 				85D1309D18BB8838001E83E1 /* StoneDetailViewController.h */,
 				85D1309E18BB8838001E83E1 /* StoneDetailViewController.m */,
 				85D1309718BB8626001E83E1 /* StoneListViewController.h */,
@@ -315,7 +330,10 @@
 				8556E74718B9FD480060D060 /* MainViewController.m in Sources */,
 				85D1309618BB7BD8001E83E1 /* CompanyViewController.m in Sources */,
 				85D1308B18BAC7BD001E83E1 /* SearchViewController.m in Sources */,
+				85D130A218BB972C001E83E1 /* CompanyMapViewController.m in Sources */,
 				85D1309F18BB8839001E83E1 /* StoneDetailViewController.m in Sources */,
+				85D130A818BBA012001E83E1 /* StoneInventoryViewController.m in Sources */,
+				85D130A518BB9FAD001E83E1 /* StoneEditViewController.m in Sources */,
 				8556E74A18B9FD480060D060 /* FlipsideViewController.m in Sources */,
 				8556E73D18B9FD480060D060 /* main.m in Sources */,
 				85D1308E18BB6E96001E83E1 /* ResultListViewController.m in Sources */,
