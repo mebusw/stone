@@ -560,7 +560,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3PT-to-3zN">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3PT-to-3zN">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
@@ -569,6 +569,9 @@
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HLx-mK-NCV" firstAttribute="top" secondItem="3PT-to-3zN" secondAttribute="bottom" id="cG0-0j-f7s"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="搜索地图" id="V4e-eV-S84"/>
                     <connections>
@@ -845,13 +848,21 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dalishi.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="BuV-NT-5Uq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="dalishi.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="BuV-NT-5Uq">
                                 <rect key="frame" x="21" y="157" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8Cx-84-fD9"/>
+                                    <constraint firstAttribute="width" constant="50" id="xLo-TR-908"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="huagangyan.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LcC-jr-ORf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="huagangyan.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LcC-jr-ORf">
                                 <rect key="frame" x="107" y="157" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="a23-zt-Nuj"/>
+                                    <constraint firstAttribute="width" constant="50" id="xd9-RQ-KRw"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofH-Lt-luQ">
                                 <rect key="frame" x="20" y="119" width="105" height="30"/>

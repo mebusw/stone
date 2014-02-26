@@ -104,8 +104,8 @@
 
 -(void) centerMap {
     MKCoordinateSpan theSpan;    //地图的范围 越小越精确
-    theSpan.latitudeDelta = .4;
-    theSpan.longitudeDelta = .4;
+    theSpan.latitudeDelta = 16;
+    theSpan.longitudeDelta = 16;
     
     MKCoordinateRegion theRegion;
     theRegion.center = locationManager.location.coordinate;
