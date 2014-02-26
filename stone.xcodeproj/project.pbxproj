@@ -22,6 +22,9 @@
 		8556E75518B9FD480060D060 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8556E73418B9FD480060D060 /* UIKit.framework */; };
 		8556E75D18B9FD480060D060 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8556E75B18B9FD480060D060 /* InfoPlist.strings */; };
 		8556E75F18B9FD480060D060 /* stoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8556E75E18B9FD480060D060 /* stoneTests.m */; };
+		8562C01E18BE13F500FF923A /* SearchMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562C01D18BE13F500FF923A /* SearchMapViewController.m */; };
+		8562C02018BE19DA00FF923A /* 6-12AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 8562C01F18BE19DA00FF923A /* 6-12AM.png */; };
+		8562C02218BE1AAB00FF923A /* Tianjin, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8562C02118BE1AAB00FF923A /* Tianjin, China.gpx */; };
 		85D1308418BAC235001E83E1 /* wireframe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85D1308318BAC235001E83E1 /* wireframe.jpg */; };
 		85D1308618BAC43A001E83E1 /* huagangyan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85D1308518BAC43A001E83E1 /* huagangyan.jpg */; };
 		85D1308818BAC5B1001E83E1 /* dalishi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85D1308718BAC5B1001E83E1 /* dalishi.jpg */; };
@@ -68,6 +71,10 @@
 		8556E75A18B9FD480060D060 /* stoneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "stoneTests-Info.plist"; sourceTree = "<group>"; };
 		8556E75C18B9FD480060D060 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8556E75E18B9FD480060D060 /* stoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = stoneTests.m; sourceTree = "<group>"; };
+		8562C01C18BE13F500FF923A /* SearchMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchMapViewController.h; sourceTree = "<group>"; };
+		8562C01D18BE13F500FF923A /* SearchMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchMapViewController.m; sourceTree = "<group>"; };
+		8562C01F18BE19DA00FF923A /* 6-12AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6-12AM.png"; sourceTree = "<group>"; };
+		8562C02118BE1AAB00FF923A /* Tianjin, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Tianjin, China.gpx"; sourceTree = "<group>"; };
 		85D1308318BAC235001E83E1 /* wireframe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wireframe.jpg; sourceTree = "<group>"; };
 		85D1308518BAC43A001E83E1 /* huagangyan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = huagangyan.jpg; sourceTree = "<group>"; };
 		85D1308718BAC5B1001E83E1 /* dalishi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dalishi.jpg; sourceTree = "<group>"; };
@@ -118,6 +125,7 @@
 		8556E72418B9FD480060D060 = {
 			isa = PBXGroup;
 			children = (
+				8562C02118BE1AAB00FF923A /* Tianjin, China.gpx */,
 				8556E73618B9FD480060D060 /* stone */,
 				8556E75818B9FD480060D060 /* stoneTests */,
 				8556E72F18B9FD480060D060 /* Frameworks */,
@@ -153,6 +161,8 @@
 				8556E73F18B9FD480060D060 /* AppDelegate.h */,
 				8556E74018B9FD480060D060 /* AppDelegate.m */,
 				8556E74218B9FD480060D060 /* Main.storyboard */,
+				8562C01C18BE13F500FF923A /* SearchMapViewController.h */,
+				8562C01D18BE13F500FF923A /* SearchMapViewController.m */,
 				85D130A618BBA012001E83E1 /* StoneInventoryViewController.h */,
 				85D130A718BBA012001E83E1 /* StoneInventoryViewController.m */,
 				85D130A318BB9FAD001E83E1 /* StoneEditViewController.h */,
@@ -211,6 +221,7 @@
 		85D1308218BAC224001E83E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8562C01F18BE19DA00FF923A /* 6-12AM.png */,
 				85D1308718BAC5B1001E83E1 /* dalishi.jpg */,
 				85D1308518BAC43A001E83E1 /* huagangyan.jpg */,
 				85D1308318BAC235001E83E1 /* wireframe.jpg */,
@@ -301,8 +312,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8562C02018BE19DA00FF923A /* 6-12AM.png in Resources */,
 				85D1308618BAC43A001E83E1 /* huagangyan.jpg in Resources */,
 				8556E74C18B9FD480060D060 /* Images.xcassets in Resources */,
+				8562C02218BE1AAB00FF923A /* Tianjin, China.gpx in Resources */,
 				8556E73B18B9FD480060D060 /* InfoPlist.strings in Resources */,
 				85D1308418BAC235001E83E1 /* wireframe.jpg in Resources */,
 				85D1308818BAC5B1001E83E1 /* dalishi.jpg in Resources */,
@@ -328,6 +341,7 @@
 				85D1309918BB8626001E83E1 /* StoneListViewController.m in Sources */,
 				8556E74118B9FD480060D060 /* AppDelegate.m in Sources */,
 				8556E74718B9FD480060D060 /* MainViewController.m in Sources */,
+				8562C01E18BE13F500FF923A /* SearchMapViewController.m in Sources */,
 				85D1309618BB7BD8001E83E1 /* CompanyViewController.m in Sources */,
 				85D1308B18BAC7BD001E83E1 /* SearchViewController.m in Sources */,
 				85D130A218BB972C001E83E1 /* CompanyMapViewController.m in Sources */,

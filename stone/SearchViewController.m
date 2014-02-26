@@ -63,10 +63,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell;
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];;
+    }
     // Configure the cell...
-    cell.textLabel.text = @"热词1";
+    if (tableView.tag==99) {
+        cell.textLabel.text = @"热词1";
+    } else {
+        cell.textLabel.text = @"提示词1";
+    }
+
     
     return cell;
 }
