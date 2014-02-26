@@ -25,6 +25,7 @@
 		8562C01E18BE13F500FF923A /* SearchMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562C01D18BE13F500FF923A /* SearchMapViewController.m */; };
 		8562C02018BE19DA00FF923A /* 6-12AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 8562C01F18BE19DA00FF923A /* 6-12AM.png */; };
 		8562C02218BE1AAB00FF923A /* Tianjin, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8562C02118BE1AAB00FF923A /* Tianjin, China.gpx */; };
+		8562C02618BE2C4B00FF923A /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 8562C02518BE2C4B00FF923A /* add.png */; };
 		85D1308418BAC235001E83E1 /* wireframe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85D1308318BAC235001E83E1 /* wireframe.jpg */; };
 		85D1308618BAC43A001E83E1 /* huagangyan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85D1308518BAC43A001E83E1 /* huagangyan.jpg */; };
 		85D1308818BAC5B1001E83E1 /* dalishi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85D1308718BAC5B1001E83E1 /* dalishi.jpg */; };
@@ -75,6 +76,7 @@
 		8562C01D18BE13F500FF923A /* SearchMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchMapViewController.m; sourceTree = "<group>"; };
 		8562C01F18BE19DA00FF923A /* 6-12AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6-12AM.png"; sourceTree = "<group>"; };
 		8562C02118BE1AAB00FF923A /* Tianjin, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Tianjin, China.gpx"; sourceTree = "<group>"; };
+		8562C02518BE2C4B00FF923A /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		85D1308318BAC235001E83E1 /* wireframe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wireframe.jpg; sourceTree = "<group>"; };
 		85D1308518BAC43A001E83E1 /* huagangyan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = huagangyan.jpg; sourceTree = "<group>"; };
 		85D1308718BAC5B1001E83E1 /* dalishi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dalishi.jpg; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		85D1308218BAC224001E83E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8562C02518BE2C4B00FF923A /* add.png */,
 				8562C01F18BE19DA00FF923A /* 6-12AM.png */,
 				85D1308718BAC5B1001E83E1 /* dalishi.jpg */,
 				85D1308518BAC43A001E83E1 /* huagangyan.jpg */,
@@ -312,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8562C02618BE2C4B00FF923A /* add.png in Resources */,
 				8562C02018BE19DA00FF923A /* 6-12AM.png in Resources */,
 				85D1308618BAC43A001E83E1 /* huagangyan.jpg in Resources */,
 				8556E74C18B9FD480060D060 /* Images.xcassets in Resources */,

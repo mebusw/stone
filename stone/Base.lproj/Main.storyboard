@@ -432,13 +432,23 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dalishi.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LKd-fL-pNx">
-                                            <rect key="frame" x="20" y="9" width="56" height="55"/>
+                                            <rect key="frame" x="95" y="9" width="57" height="57"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="huagangyan.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="THc-u3-gRm">
-                                            <rect key="frame" x="94" y="9" width="56" height="55"/>
+                                            <rect key="frame" x="169" y="9" width="57" height="57"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnr-Ta-KKm">
+                                            <rect key="frame" x="20" y="9" width="57" height="57"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button" image="add.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="addImage:" destination="7Sp-3R-ZFs" eventType="touchUpInside" id="iLK-L2-wiW"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -864,6 +874,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add.png" width="256" height="256"/>
         <image name="dalishi.jpg" width="309" height="220"/>
         <image name="huagangyan.jpg" width="400" height="300"/>
     </resources>

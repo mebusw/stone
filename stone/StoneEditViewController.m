@@ -44,6 +44,86 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction) addImage:(id)sender {
+    UIActionSheet *photoActionSheet = [[UIActionSheet alloc]
+                                    initWithTitle:nil
+                                    delegate:(id)self
+                                    cancelButtonTitle:@"取消"
+                                    destructiveButtonTitle:nil
+                                    otherButtonTitles: @"从相册选择", @"拍照",nil];
+    [photoActionSheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            //从相册选择
+            [self LocalPhoto];
+            break;
+        case 1:
+            //拍照
+            [self takePhoto];
+            break;
+        default:
+            break;
+    }
+}
+
+//从相册选择
+-(void)LocalPhoto{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    //资源类型为图片库
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = (id)self;
+    //设置选择后的图片可被编辑
+    picker.allowsEditing = YES;
+    [self presentViewController:picker animated:YES completion:^(void){}];
+}
+
+//拍照
+-(void)takePhoto{
+    //资源类型为照相机
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+    //判断是否有相机
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]){
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = (id)self;
+        //设置拍照后的图片可被编辑
+        picker.allowsEditing = YES;
+        //资源类型为照相机
+        picker.sourceType = sourceType;
+        [self presentViewController:picker animated:YES completion:^(void){}];
+    }else {
+        NSLog(@"该设备无摄像头");
+    }
+}
+#pragma Delegate method UIImagePickerControllerDelegate
+//图像选取器的委托方法，选完图片后回调该方法
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
+    
+    //当图片不为空时显示图片并保存图片
+    if (image != nil) {
+        //图片显示在界面上
+        
+        //以下是保存文件到沙盒路径下
+        //把图片转成NSData类型的数据来保存文件
+        NSData *data;
+        //判断图片是不是png格式的文件
+        if (UIImagePNGRepresentation(image)) {
+            //返回为png图像。
+            data = UIImagePNGRepresentation(image);
+        }else {
+            //返回为JPEG图像。
+            data = UIImageJPEGRepresentation(image, 1.0);
+        }
+        //保存
+//        [[NSFileManager defaultManager] createFileAtPath:self.imagePath contents:data attributes:nil];
+        
+    }
+    //关闭相册界面
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

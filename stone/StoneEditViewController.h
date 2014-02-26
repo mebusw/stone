@@ -11,4 +11,6 @@
 @interface StoneEditViewController : UITableViewController
 
 -(IBAction)doneEditing:(id)sender;
+- (IBAction) addImage:(id)sender;
+
 @end
