@@ -10,6 +10,8 @@
 
 @interface StoneEditViewController : UITableViewController
 
+@property (nonatomic, weak) IBOutlet UIPickerView *pickerView;
+
 -(IBAction)doneEditing:(id)sender;
 - (IBAction) addImage:(id)sender;
 

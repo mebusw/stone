@@ -44,6 +44,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+#pragma mark - Picker
+
+
+
+#pragma mark - Image
+
 - (IBAction) addImage:(id)sender {
     UIActionSheet *photoActionSheet = [[UIActionSheet alloc]
                                     initWithTitle:nil
@@ -58,7 +65,7 @@
     switch (buttonIndex) {
         case 0:
             //从相册选择
-            [self LocalPhoto];
+            [self localPhoto];
             break;
         case 1:
             //拍照
@@ -70,7 +77,7 @@
 }
 
 //从相册选择
--(void)LocalPhoto{
+-(void)localPhoto{
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     //资源类型为图片库
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -97,7 +104,8 @@
         NSLog(@"该设备无摄像头");
     }
 }
-#pragma Delegate method UIImagePickerControllerDelegate
+
+#pragma mark - Delegate method UIImagePickerControllerDelegate
 //图像选取器的委托方法，选完图片后回调该方法
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     
@@ -149,6 +157,43 @@
     // Configure the cell...
     
     return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DLog(@"row %d", indexPath.row);
+    switch (indexPath.row) {
+        case 2:
+
+            
+            break;
+        default:
+
+            break;
+    }
+
+    
+}
+
+#pragma mark Picker View Delegate
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return 5;
+}
+
+-(UIView *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [@[@"哈哈",
+              @"two",
+              @"three",
+              @"four",
+              @"five"] objectAtIndex:row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    DLog(@"did select pv %d", row);
 }
 
 /*
