@@ -36,7 +36,12 @@
 }
 
 -(IBAction) navigateToTheCompany:(id)sender {
+    MKPlacemark *pm = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(40.094230, 117.523355) addressDictionary:nil];
+    MKMapItem *there = [[MKMapItem alloc] initWithPlacemark:pm];
+    MKMapItem *here = [MKMapItem mapItemForCurrentLocation];
     
+    [MKMapItem openMapsWithItems:@[here, there] launchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving}];
+//    [here openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving}];
 }
 
 

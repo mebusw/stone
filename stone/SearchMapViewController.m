@@ -41,15 +41,16 @@
     
     NSLog(@"----");
     
-    [self.map setShowsUserLocation:YES];
+    self.map.showsUserLocation = YES;
+    self.map.showsPointsOfInterest = YES;
     
 
     
 //    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    locationManager = [[CLLocationManager alloc]init];
-    locationManager.delegate = (id)self;
+//    locationManager = [[CLLocationManager alloc]init];
+//    locationManager.delegate = (id)self;
     self.map.delegate = (id)self;
-    [locationManager startUpdatingLocation];
+//    [locationManager startUpdatingLocation];
 }
 
 
