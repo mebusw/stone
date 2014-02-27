@@ -47,10 +47,11 @@
 
     
 //    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-//    locationManager = [[CLLocationManager alloc]init];
-//    locationManager.delegate = (id)self;
+    locationManager = [[CLLocationManager alloc]init];
+    locationManager.delegate = (id)self;
     self.map.delegate = (id)self;
 //    [locationManager startUpdatingLocation];
+    
 }
 
 
@@ -74,7 +75,7 @@
  * for iOS 6+
  */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-//    printCoordinate(@"map view", ((CLLocation*)locations[0]).coordinate);
+    printCoordinate(@"map view", ((CLLocation*)locations[0]).coordinate);
     
 }
 

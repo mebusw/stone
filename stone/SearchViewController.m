@@ -72,9 +72,9 @@
     }
     // Configure the cell...
     if (tableView.tag==99) {
-        cell.textLabel.text = @"热词1";
+        cell.textLabel.text = @"(最近流行词)蒙古黑";
     } else {
-        cell.textLabel.text = @"提示词1";
+        cell.textLabel.text = @"(自动提示词)XYZ";
     }
 
     
