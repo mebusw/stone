@@ -8,7 +8,11 @@
 
 #import "StoneEditViewController.h"
 
-@interface StoneEditViewController ()
+@interface StoneEditViewController () {
+    UIPickerView *colorPicker;
+    UIToolbar *colorPickerToolbar;
+    NSArray *colorOfStones;
+}
 
 @end
 
@@ -32,6 +36,13 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    colorOfStones = @[@"金黄",
+                      @"米黄",
+                      @"桃红",
+                      @"亮黄",
+                      @"翠绿"];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -161,12 +172,22 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DLog(@"row %d", indexPath.row);
     switch (indexPath.row) {
-        case 2:
-
+        case 2: {
+            colorPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
+            colorPicker.delegate = (id)self;
+            colorPicker.dataSource = (id)self;
+            colorPicker.showsSelectionIndicator = YES;
+            colorPicker.backgroundColor = [UIColor lightGrayColor];
+            [self.view addSubview:colorPicker];
             
+            colorPickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 156.0f, 320.0f, 44.0f)];
+            UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissPicker:)];
+            NSArray *items = [NSArray arrayWithObject:item];
+            colorPickerToolbar.items = items;
+            [self.view addSubview:colorPickerToolbar];
             break;
+        }
         default:
 
             break;
@@ -175,25 +196,31 @@
     
 }
 
+
+
+
 #pragma mark Picker View Delegate
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 5;
+    return [colorOfStones count];
 }
 
 -(UIView *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [@[@"哈哈",
-              @"two",
-              @"three",
-              @"four",
-              @"five"] objectAtIndex:row];
+    return [colorOfStones objectAtIndex:row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     DLog(@"did select pv %d", row);
+    [self dismissPicker:nil];
+}
+
+-(void) dismissPicker:(id)obj {
+    //todo
+    [colorPicker removeFromSuperview];
+    [colorPickerToolbar removeFromSuperview];
 }
 
 /*
