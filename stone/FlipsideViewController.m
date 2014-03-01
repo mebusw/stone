@@ -18,6 +18,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    UIButton *searchFilterBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [searchFilterBtn setFrame:CGRectMake(80, 220, 100, 80)];
+    [searchFilterBtn addTarget:self
+               action:@selector(aMethod:)
+     forControlEvents:UIControlEventTouchDown];
+    [searchFilterBtn setTitle:@"筛选" forState:UIControlStateNormal];
+    [self.view addSubview:searchFilterBtn];
+
+}
+
+-(IBAction) aMethod:(id)sender {
+    DLog(@"");
 }
 
 - (void)didReceiveMemoryWarning
