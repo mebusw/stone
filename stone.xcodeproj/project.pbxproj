@@ -124,6 +124,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8511AF8C18C1E6B700F8CD64 /* CompanyManagement */ = {
+			isa = PBXGroup;
+			children = (
+				85D130A618BBA012001E83E1 /* StoneInventoryViewController.h */,
+				85D130A718BBA012001E83E1 /* StoneInventoryViewController.m */,
+				85D130A318BB9FAD001E83E1 /* StoneEditViewController.h */,
+				85D130A418BB9FAD001E83E1 /* StoneEditViewController.m */,
+				8556E74818B9FD480060D060 /* FlipsideViewController.h */,
+				8556E74918B9FD480060D060 /* FlipsideViewController.m */,
+			);
+			name = CompanyManagement;
+			sourceTree = "<group>";
+		};
+		8511AF8D18C1E6D900F8CD64 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8562C01C18BE13F500FF923A /* SearchMapViewController.h */,
+				8562C01D18BE13F500FF923A /* SearchMapViewController.m */,
+				85D1308C18BB6E96001E83E1 /* ResultListViewController.h */,
+				85D1308D18BB6E96001E83E1 /* ResultListViewController.m */,
+				85D1308918BAC7BD001E83E1 /* SearchViewController.h */,
+				85D1308A18BAC7BD001E83E1 /* SearchViewController.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		8511AF8E18C1E6EB00F8CD64 /* StoneInfo */ = {
+			isa = PBXGroup;
+			children = (
+				85D130A018BB972C001E83E1 /* CompanyMapViewController.h */,
+				85D130A118BB972C001E83E1 /* CompanyMapViewController.m */,
+				85D1309D18BB8838001E83E1 /* StoneDetailViewController.h */,
+				85D1309E18BB8838001E83E1 /* StoneDetailViewController.m */,
+				85D1309718BB8626001E83E1 /* StoneListViewController.h */,
+				85D1309818BB8626001E83E1 /* StoneListViewController.m */,
+				85D1309418BB7BD8001E83E1 /* CompanyViewController.h */,
+				85D1309518BB7BD8001E83E1 /* CompanyViewController.m */,
+			);
+			name = StoneInfo;
+			sourceTree = "<group>";
+		};
 		8556E72418B9FD480060D060 = {
 			isa = PBXGroup;
 			children = (
@@ -163,28 +204,11 @@
 				8556E73F18B9FD480060D060 /* AppDelegate.h */,
 				8556E74018B9FD480060D060 /* AppDelegate.m */,
 				8556E74218B9FD480060D060 /* Main.storyboard */,
-				8562C01C18BE13F500FF923A /* SearchMapViewController.h */,
-				8562C01D18BE13F500FF923A /* SearchMapViewController.m */,
-				85D130A618BBA012001E83E1 /* StoneInventoryViewController.h */,
-				85D130A718BBA012001E83E1 /* StoneInventoryViewController.m */,
-				85D130A318BB9FAD001E83E1 /* StoneEditViewController.h */,
-				85D130A418BB9FAD001E83E1 /* StoneEditViewController.m */,
-				85D130A018BB972C001E83E1 /* CompanyMapViewController.h */,
-				85D130A118BB972C001E83E1 /* CompanyMapViewController.m */,
-				85D1309D18BB8838001E83E1 /* StoneDetailViewController.h */,
-				85D1309E18BB8838001E83E1 /* StoneDetailViewController.m */,
-				85D1309718BB8626001E83E1 /* StoneListViewController.h */,
-				85D1309818BB8626001E83E1 /* StoneListViewController.m */,
-				85D1309418BB7BD8001E83E1 /* CompanyViewController.h */,
-				85D1309518BB7BD8001E83E1 /* CompanyViewController.m */,
-				85D1308C18BB6E96001E83E1 /* ResultListViewController.h */,
-				85D1308D18BB6E96001E83E1 /* ResultListViewController.m */,
-				85D1308918BAC7BD001E83E1 /* SearchViewController.h */,
-				85D1308A18BAC7BD001E83E1 /* SearchViewController.m */,
+				8511AF8D18C1E6D900F8CD64 /* Search */,
+				8511AF8C18C1E6B700F8CD64 /* CompanyManagement */,
+				8511AF8E18C1E6EB00F8CD64 /* StoneInfo */,
 				8556E74518B9FD480060D060 /* MainViewController.h */,
 				8556E74618B9FD480060D060 /* MainViewController.m */,
-				8556E74818B9FD480060D060 /* FlipsideViewController.h */,
-				8556E74918B9FD480060D060 /* FlipsideViewController.m */,
 				8556E74B18B9FD480060D060 /* Images.xcassets */,
 				8556E73718B9FD480060D060 /* Supporting Files */,
 			);

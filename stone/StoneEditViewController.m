@@ -12,6 +12,9 @@
     UIPickerView *colorPicker;
     UIToolbar *colorPickerToolbar;
     NSArray *colorOfStones;
+    NSArray *originsOfSones;
+    BOOL isPickerHidden;
+    UIPickerView *originPicker;
 }
 
 @end
@@ -27,22 +30,36 @@
     return self;
 }
 
+
+
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+ 
+    [self preparePickers];
+    
+}
+
+- (void)preparePickers
+{
     colorOfStones = @[@"金黄",
                       @"米黄",
                       @"桃红",
                       @"亮黄",
                       @"翠绿"];
-    
+    originsOfSones = @[@"巴西", @"西班牙", @"蒙古", @"新西兰", @"法国", @"俄罗斯"];
+    originPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(20, 10, 280, 216)];
+    originPicker.dataSource = (id)self;
+    originPicker.delegate = (id)self;
+    isPickerHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,8 +72,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
-#pragma mark - Picker
 
 
 
@@ -116,7 +131,10 @@
     }
 }
 
+
+
 #pragma mark - Delegate method UIImagePickerControllerDelegate
+
 //图像选取器的委托方法，选完图片后回调该方法
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     
@@ -143,6 +161,8 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -166,13 +186,39 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    switch (indexPath.row) {
+        case 1: {
+            UILabel *originLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 10, 50, 22)];
+            originLabel.text = @"产地";
+            [cell addSubview:originLabel];
+            [cell addSubview:originPicker];
+            break;
+        }
+        default:
+            break;
+    }
     
     return cell;
 }
 
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 1 && !isPickerHidden) {
+        return 200;
+    }
+    return 66;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
+        case 1: {
+            if (isPickerHidden) {
+                isPickerHidden = NO;
+            } else {
+                isPickerHidden = YES;
+            }
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        }
         case 2: {
             colorPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
             colorPicker.delegate = (id)self;
@@ -199,16 +245,23 @@
 
 
 
-#pragma mark Picker View Delegate
+#pragma mark - Picker View Delegate
+
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    if (pickerView == originPicker) {
+        return [originsOfSones count];
+    }
     return [colorOfStones count];
 }
 
 -(UIView *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    if (pickerView == originPicker) {
+        return [originsOfSones objectAtIndex:row];
+    }
     return [colorOfStones objectAtIndex:row];
 }
 
