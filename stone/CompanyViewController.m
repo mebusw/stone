@@ -67,6 +67,22 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case 2: {
+            /* This only works on real devices. */
+            NSString *num = [[NSString alloc] initWithFormat:@"telprompt://%@", @"13621766604"];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]];
+            break;
+        }
+    }
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static CGFloat heightOfRows[] = {120, 46, 35, 150};
+    return heightOfRows[indexPath.row];
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

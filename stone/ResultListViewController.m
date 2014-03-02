@@ -8,7 +8,9 @@
 
 #import "ResultListViewController.h"
 
-@interface ResultListViewController ()
+@interface ResultListViewController () {
+    
+}
 
 @end
 
@@ -53,15 +55,17 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    //    static NSString *CellIdentifier = @"Cell";
+    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%d", indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+   
     // Configure the cell...
+    
     
     return cell;
 }

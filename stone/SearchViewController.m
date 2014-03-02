@@ -8,7 +8,9 @@
 
 #import "SearchViewController.h"
 
-@interface SearchViewController ()
+@interface SearchViewController () {
+    NSArray *popularWords;
+}
 
 @end
 
@@ -32,6 +34,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    popularWords = @[@"(最近流行词)蒙古黑", @"(最近流行词)法国砂岩", @"(最近流行词)葡萄牙米黄"];
 
 }
 
@@ -58,11 +62,13 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return [popularWords count];
 }
 
+#define POPULAR_WORDS 99
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell;
 //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
@@ -72,8 +78,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];;
     }
     // Configure the cell...
-    if (tableView.tag==99) {
-        cell.textLabel.text = @"(最近流行词)蒙古黑";
+    if (tableView.tag == POPULAR_WORDS) {
+        cell.textLabel.text = popularWords[indexPath.row];
     } else {
         cell.textLabel.text = @"(自动提示词)XYZ";
     }
