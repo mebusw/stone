@@ -183,11 +183,11 @@
                                 <rect key="frame" x="173" y="129" width="127" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="huagangyan.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SeR-lR-X4d">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jixueshi.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="SeR-lR-X4d">
                                 <rect key="frame" x="20" y="287" width="127" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="huagangyan.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="12y-2j-GI9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="xuanwuyan.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="12y-2j-GI9">
                                 <rect key="frame" x="173" y="287" width="127" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -203,7 +203,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smL-oa-7MN">
-                                <rect key="frame" x="80" y="428" width="160" height="38"/>
+                                <rect key="frame" x="80" y="432" width="160" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="厂家地图大全 >>>">
@@ -217,7 +217,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="综合信息滚动发布">
+                                <state key="normal" title="(综合信息滚动发布)">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -238,14 +238,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="花岗岩" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jek-cg-EkS">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="鸡血石" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jek-cg-EkS">
                                 <rect key="frame" x="62" y="414" width="59" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="花岗岩" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vj1-eh-24r">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="玄武岩" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vj1-eh-24r">
                                 <rect key="frame" x="207" y="414" width="59" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -828,7 +828,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="苏州街58号名商大厦2楼(近人民大学西门)" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" id="jAy-me-FF5">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="中华人民共和国上海市青浦区北青公路 5777号" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" id="jAy-me-FF5">
                                             <rect key="frame" x="15" y="0.0" width="270" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -950,6 +950,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="石材列表" id="uIF-gM-YuG"/>
+                    <connections>
+                        <outlet property="tableView" destination="lyJ-xb-NkZ" id="sjO-Gp-39u"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F5z-aU-cfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1029,9 +1032,9 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofH-Lt-luQ">
-                                <rect key="frame" x="20" y="134" width="105" height="30"/>
+                                <rect key="frame" x="20" y="134" width="180" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="公司：上海青浦">
+                                <state key="normal" title="厂商：上海青浦石材总公司">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1107,7 +1110,7 @@
                             <constraint firstItem="BuV-NT-5Uq" firstAttribute="top" secondItem="ofH-Lt-luQ" secondAttribute="bottom" constant="62" id="XPz-lz-LNp"/>
                             <constraint firstItem="jHG-Ve-PB5" firstAttribute="leading" secondItem="enx-Bl-Pxi" secondAttribute="trailing" constant="8" symbolic="YES" id="YuX-AD-oI9"/>
                             <constraint firstItem="BuV-NT-5Uq" firstAttribute="top" secondItem="jHG-Ve-PB5" secondAttribute="bottom" constant="33" id="ebU-i4-cVX"/>
-                            <constraint firstItem="v6N-zP-us3" firstAttribute="top" secondItem="qt5-M7-dhL" secondAttribute="bottom" constant="12" id="ej5-Vy-42P"/>
+                            <constraint firstItem="v6N-zP-us3" firstAttribute="top" secondItem="qt5-M7-dhL" secondAttribute="bottom" constant="56" id="ej5-Vy-42P"/>
                             <constraint firstItem="jHG-Ve-PB5" firstAttribute="leading" secondItem="v6N-zP-us3" secondAttribute="leading" constant="215" id="g4v-J2-Gaa"/>
                             <constraint firstItem="qfo-Jo-osW" firstAttribute="top" secondItem="BWS-kf-1lg" secondAttribute="bottom" constant="20" id="pEc-P4-W75"/>
                             <constraint firstItem="BWS-kf-1lg" firstAttribute="top" secondItem="a6v-eh-pvE" secondAttribute="bottom" constant="33" id="v4E-5F-XEM"/>
@@ -1158,6 +1161,8 @@
         <image name="ShiCaiChang.jpg" width="177" height="117"/>
         <image name="dalishi.jpg" width="309" height="220"/>
         <image name="huagangyan.jpg" width="400" height="300"/>
+        <image name="jixueshi.jpeg" width="286" height="176"/>
+        <image name="xuanwuyan.jpg" width="300" height="225"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1165,7 +1170,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dG5-hR-374"/>
+        <segue reference="BBH-mn-feM"/>
         <segue reference="rQM-Q4-QUs"/>
     </inferredMetricsTieBreakers>
 </document>

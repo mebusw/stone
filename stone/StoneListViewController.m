@@ -35,11 +35,13 @@
     
     UIButton *searchFilterBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [searchFilterBtn setFrame:CGRectMake(5, 220, 65, 30)];
+    [searchFilterBtn setBackgroundColor:[UIColor lightGrayColor]];
     [searchFilterBtn addTarget:self
                         action:@selector(expandFilterButton:)
               forControlEvents:UIControlEventTouchDown];
-    [searchFilterBtn setTitle:@"筛选品种" forState:UIControlStateNormal];
-    [self.view addSubview:searchFilterBtn];
+    [searchFilterBtn setTitle:@"筛选品种↓" forState:UIControlStateNormal];
+    
+    self.tableView.tableHeaderView = searchFilterBtn;
 }
 
 
@@ -48,7 +50,7 @@
 
     for (int i = 0; i < [kindsOfStone count]; i++) {
         UIButton *kindBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-        [kindBtn setFrame:CGRectMake(5, 220 + (i + 1) * 30, 50, 30)];
+        [kindBtn setFrame:CGRectMake(0, 0 + (i + 1) * 30, 50, 30)];
         [kindBtn setTitle:kindsOfStone[i] forState:UIControlStateNormal];
         [kindBtn setBackgroundColor:[UIColor lightGrayColor]];
         [kindBtn addTarget:self

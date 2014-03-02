@@ -10,4 +10,6 @@
 
 @interface StoneListViewController : UITableViewController
 
+@property (nonatomic) IBOutlet UITableView *tableView;
+
 @end

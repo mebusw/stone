@@ -27,6 +27,8 @@
 		8562C02018BE19DA00FF923A /* 6-12AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 8562C01F18BE19DA00FF923A /* 6-12AM.png */; };
 		8562C02218BE1AAB00FF923A /* Tianjin, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8562C02118BE1AAB00FF923A /* Tianjin, China.gpx */; };
 		8562C02618BE2C4B00FF923A /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 8562C02518BE2C4B00FF923A /* add.png */; };
+		85B7CFD618C383AA00683F4E /* jixueshi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 85B7CFD418C383AA00683F4E /* jixueshi.jpeg */; };
+		85B7CFD718C383AA00683F4E /* xuanwuyan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85B7CFD518C383AA00683F4E /* xuanwuyan.jpg */; };
 		85D1308618BAC43A001E83E1 /* huagangyan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85D1308518BAC43A001E83E1 /* huagangyan.jpg */; };
 		85D1308818BAC5B1001E83E1 /* dalishi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85D1308718BAC5B1001E83E1 /* dalishi.jpg */; };
 		85D1308B18BAC7BD001E83E1 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D1308A18BAC7BD001E83E1 /* SearchViewController.m */; };
@@ -78,6 +80,8 @@
 		8562C01F18BE19DA00FF923A /* 6-12AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6-12AM.png"; sourceTree = "<group>"; };
 		8562C02118BE1AAB00FF923A /* Tianjin, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Tianjin, China.gpx"; sourceTree = "<group>"; };
 		8562C02518BE2C4B00FF923A /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		85B7CFD418C383AA00683F4E /* jixueshi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jixueshi.jpeg; sourceTree = "<group>"; };
+		85B7CFD518C383AA00683F4E /* xuanwuyan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xuanwuyan.jpg; sourceTree = "<group>"; };
 		85D1308518BAC43A001E83E1 /* huagangyan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = huagangyan.jpg; sourceTree = "<group>"; };
 		85D1308718BAC5B1001E83E1 /* dalishi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dalishi.jpg; sourceTree = "<group>"; };
 		85D1308918BAC7BD001E83E1 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 		85D1308218BAC224001E83E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				85B7CFD418C383AA00683F4E /* jixueshi.jpeg */,
+				85B7CFD518C383AA00683F4E /* xuanwuyan.jpg */,
 				850643F818C2D1F200573DCC /* ShiCaiChang.jpg */,
 				8562C02518BE2C4B00FF923A /* add.png */,
 				8562C01F18BE19DA00FF923A /* 6-12AM.png */,
@@ -345,7 +351,9 @@
 				8556E74C18B9FD480060D060 /* Images.xcassets in Resources */,
 				8562C02218BE1AAB00FF923A /* Tianjin, China.gpx in Resources */,
 				8556E73B18B9FD480060D060 /* InfoPlist.strings in Resources */,
+				85B7CFD618C383AA00683F4E /* jixueshi.jpeg in Resources */,
 				850643F918C2D1F200573DCC /* ShiCaiChang.jpg in Resources */,
+				85B7CFD718C383AA00683F4E /* xuanwuyan.jpg in Resources */,
 				85D1308818BAC5B1001E83E1 /* dalishi.jpg in Resources */,
 				8556E74418B9FD480060D060 /* Main.storyboard in Resources */,
 			);
