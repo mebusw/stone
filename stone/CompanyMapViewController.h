@@ -12,6 +12,7 @@
 
 @interface CompanyMapViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet MKMapView *map;
 
 -(IBAction) navigateToTheCompany:(id)sender;
 

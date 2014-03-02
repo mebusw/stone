@@ -98,7 +98,7 @@
         anno.coordinate = CLLocationCoordinate2DMake([lat doubleValue], [lng doubleValue]);
         
         anno.title = merchant[@"name"];
-        anno.subtitle = STR(@"距离%.2f公里, 库存%d方", 35.0, 988);
+        anno.subtitle = STR(@"共%d个品种, 总库存%d方", 5, 1988);
         
         [self.map addAnnotation:anno];
     }
@@ -145,7 +145,6 @@
 }
 
 -(void) mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    NSLog(@"====");
     UIViewController *companyVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CompanyVC"];
     
     [self.navigationController pushViewController:companyVC animated:YES];
@@ -196,6 +195,39 @@
                                                 @"price": @"400",
                                                 @"images": @[@"70.jpg"],
                                                 @"description": @"球场占地面积1100亩，为国际标准18洞锦标赛场地，标准杆72杆，球道总长度6961码。"
+                                                },
+                                            @{
+                                                @"id": @69,
+                                                @"name": @"上海青浦石材总公司",
+                                                @"latitude": @31.20333,
+                                                @"longitude": @121.14250,
+                                                @"address": @"天津市武清开发区福源道20号",
+                                                @"phone": @"022-82115588",
+                                                @"price": @"600",
+                                                @"images": @[@"69.jpg"],
+                                                @"description": @"标准为9洞36杆，球场三面环水，梯台及果岭置于岛上，极具挑战且难度较大。"
+                                                },
+                                            @{
+                                                @"id": @69,
+                                                @"name": @"上海莘庄石材厂",
+                                                @"latitude": @31.19333,
+                                                @"longitude": @121.34250,
+                                                @"address": @"天津市武清开发区福源道20号",
+                                                @"phone": @"022-82115588",
+                                                @"price": @"600",
+                                                @"images": @[@"69.jpg"],
+                                                @"description": @"标准为9洞36杆，球场三面环水，梯台及果岭置于岛上，极具挑战且难度较大。"
+                                                },
+                                            @{
+                                                @"id": @69,
+                                                @"name": @"上海闵行石材厂",
+                                                @"latitude": @31.09453,
+                                                @"longitude": @121.3350,
+                                                @"address": @"天津市武清开发区福源道20号",
+                                                @"phone": @"022-82115588",
+                                                @"price": @"600",
+                                                @"images": @[@"69.jpg"],
+                                                @"description": @"标准为9洞36杆，球场三面环水，梯台及果岭置于岛上，极具挑战且难度较大。"
                                                 }
                                             ]];
 }
