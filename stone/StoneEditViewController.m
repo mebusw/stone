@@ -184,14 +184,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 6;
 }
@@ -208,8 +206,10 @@
             if (!expandingLabel) {
                 originLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 15, 50, 22)];
                 originLabel.text = @"产地";
-                expandingLabel = [[UILabel alloc] initWithFrame:CGRectMake(300, 15, 20, 22)];
-                expandingLabel.text = @"v";
+                expandingLabel = [[UILabel alloc] initWithFrame:CGRectMake(278, 15, 35, 22)];
+                expandingLabel.font = [UIFont systemFontOfSize:14];
+                expandingLabel.textColor = [UIColor darkGrayColor];
+                expandingLabel.text = @"巴西";
             }
             
                 [cell addSubview:expandingLabel];
@@ -244,7 +244,7 @@
                 expandingLabel.text = @"^";
             } else {
                 isPickerHidden = YES;
-                expandingLabel.text = @"v";
+                expandingLabel.text = @"巴西";
                 
             }
             [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
