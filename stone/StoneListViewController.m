@@ -32,6 +32,42 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIButton *searchFilterBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [searchFilterBtn setFrame:CGRectMake(5, 220, 65, 30)];
+    [searchFilterBtn addTarget:self
+                        action:@selector(expandFilterButton:)
+              forControlEvents:UIControlEventTouchDown];
+    [searchFilterBtn setTitle:@"筛选品种" forState:UIControlStateNormal];
+    [self.view addSubview:searchFilterBtn];
+}
+
+
+-(IBAction) expandFilterButton:(id)sender {
+    NSArray *kindsOfStone = @[@"花岗岩", @"大理石", @"玄武岩", @"人造石"];
+
+    for (int i = 0; i < [kindsOfStone count]; i++) {
+        UIButton *kindBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [kindBtn setFrame:CGRectMake(5, 220 + (i + 1) * 30, 50, 30)];
+        [kindBtn setTitle:kindsOfStone[i] forState:UIControlStateNormal];
+        [kindBtn setBackgroundColor:[UIColor lightGrayColor]];
+        [kindBtn addTarget:self
+                            action:@selector(filterAKind:)
+                  forControlEvents:UIControlEventTouchDown];
+        [kindBtn setTag:i];
+        
+        [UIView transitionWithView:self.view
+                          duration:0.8
+                           options:UIViewAnimationOptionCurveEaseIn
+                        animations:^{
+                            [self.view addSubview:kindBtn];
+                        }
+                        completion:NULL];
+    }
+}
+
+-(IBAction)filterAKind:(id)sender {
+    DLog(@"%d", ((UIButton*)sender).tag);
 }
 
 - (void)didReceiveMemoryWarning
