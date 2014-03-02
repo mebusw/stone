@@ -15,6 +15,8 @@
     NSArray *originsOfSones;
     BOOL isPickerHidden;
     UIPickerView *originPicker;
+    UILabel *expandingLabel;
+    UILabel *originLabel;
 }
 
 @end
@@ -56,10 +58,25 @@
                       @"亮黄",
                       @"翠绿"];
     originsOfSones = @[@"巴西", @"西班牙", @"蒙古", @"新西兰", @"法国", @"俄罗斯"];
-    originPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(20, 10, 280, 216)];
+    originPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(5, 15, 280, 216)];
     originPicker.dataSource = (id)self;
     originPicker.delegate = (id)self;
     isPickerHidden = YES;
+    
+    
+    colorPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
+    colorPicker.delegate = (id)self;
+    colorPicker.dataSource = (id)self;
+    colorPicker.showsSelectionIndicator = YES;
+    colorPicker.backgroundColor = [UIColor lightGrayColor];
+    
+    
+    colorPickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 156.0f, 320.0f, 44.0f)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissPicker:)];
+    NSArray *items = [NSArray arrayWithObject:item];
+    colorPickerToolbar.items = items;
+
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -176,7 +193,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 5;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -188,10 +205,17 @@
     // Configure the cell...
     switch (indexPath.row) {
         case 1: {
-            UILabel *originLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 10, 50, 22)];
-            originLabel.text = @"产地";
-            [cell addSubview:originLabel];
-            [cell addSubview:originPicker];
+            if (!expandingLabel) {
+                originLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 15, 50, 22)];
+                originLabel.text = @"产地";
+                expandingLabel = [[UILabel alloc] initWithFrame:CGRectMake(300, 15, 20, 22)];
+                expandingLabel.text = @"v";
+            }
+            
+                [cell addSubview:expandingLabel];
+                [cell addSubview:originLabel];
+                [cell addSubview:originPicker];
+
             break;
         }
         default:
@@ -202,10 +226,14 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return 120;
+    }
+
     if (indexPath.row == 1 && !isPickerHidden) {
         return 200;
     }
-    return 66;
+    return 60;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -213,35 +241,35 @@
         case 1: {
             if (isPickerHidden) {
                 isPickerHidden = NO;
+                expandingLabel.text = @"^";
             } else {
                 isPickerHidden = YES;
+                expandingLabel.text = @"v";
+                
             }
             [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
         }
         case 2: {
-            colorPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0f, 200.0f, 320.0f, 216.0f)];
-            colorPicker.delegate = (id)self;
-            colorPicker.dataSource = (id)self;
-            colorPicker.showsSelectionIndicator = YES;
-            colorPicker.backgroundColor = [UIColor lightGrayColor];
-            [self.view addSubview:colorPicker];
-            
-            colorPickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 156.0f, 320.0f, 44.0f)];
-            UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissPicker:)];
-            NSArray *items = [NSArray arrayWithObject:item];
-            colorPickerToolbar.items = items;
-            [self.view addSubview:colorPickerToolbar];
+            [UIView transitionWithView:self.view
+                              duration:0.8
+                               options:UIViewAnimationOptionCurveEaseIn
+                            animations:^{
+                                [self.view addSubview:colorPicker];
+                                [self.view addSubview:colorPickerToolbar];
+                            }
+                            completion:NULL];
             break;
         }
         default:
 
             break;
     }
-
-    
 }
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DLog(@"deSelect %d", indexPath.row);
+}
 
 
 
@@ -271,7 +299,7 @@
 }
 
 -(void) dismissPicker:(id)obj {
-    //todo
+    
     [colorPicker removeFromSuperview];
     [colorPickerToolbar removeFromSuperview];
 }
