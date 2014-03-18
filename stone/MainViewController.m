@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "SlidesViewController.h"
 
 @interface MainViewController ()
 
@@ -18,6 +19,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    SlidesViewController *slideVC = [[SlidesViewController alloc] initWithFrame:CGRectMake(0, 60, 320, 60)];
+    [self.view addSubview:slideVC.view];
+    slideVC.images = @[@"xuanwuyan.jpg", @"jixueshi.jpg", @"dalishi.jpg"];
 }
 
 - (void)didReceiveMemoryWarning
