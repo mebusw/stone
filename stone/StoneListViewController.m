@@ -8,9 +8,22 @@
 
 #import "StoneListViewController.h"
 
-@interface StoneListViewController ()
+
+@interface StoneListViewController () {
+    
+    NSInteger touchedMenuTitleIndex;
+    NSInteger widthOfMenuItem;
+    NSMutableArray *displayingMenuItems;
+}
 
 @end
+
+
+
+#define SCREEN_WIDTH 320
+#define MENU_ITEM_HEIGHT 30
+
+
 
 @implementation StoneListViewController
 
@@ -33,44 +46,83 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    UIButton *searchFilterBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [searchFilterBtn setFrame:CGRectMake(5, 220, 65, 30)];
-    [searchFilterBtn setBackgroundColor:[UIColor lightGrayColor]];
-    [searchFilterBtn addTarget:self
-                        action:@selector(expandFilterButton:)
-              forControlEvents:UIControlEventTouchDown];
-    [searchFilterBtn setTitle:@"筛选品种↓" forState:UIControlStateNormal];
     
-    self.tableView.tableHeaderView = searchFilterBtn;
-}
+    
+    UIView *menuTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, MENU_ITEM_HEIGHT)];
+    [menuTitleView setBackgroundColor:[UIColor lightGrayColor]];
 
+    displayingMenuItems = [NSMutableArray array];
+    
+    NSArray *menuTitles = @[@"品种△", @"颜色△", @"产地△"];
+    widthOfMenuItem = SCREEN_WIDTH / [menuTitles count];
 
--(IBAction) expandFilterButton:(id)sender {
-    NSArray *kindsOfStone = @[@"花岗岩", @"大理石", @"玄武岩", @"人造石"];
-
-    for (int i = 0; i < [kindsOfStone count]; i++) {
-        UIButton *kindBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-        [kindBtn setFrame:CGRectMake(0, 0 + (i + 1) * 30, 50, 30)];
-        [kindBtn setTitle:kindsOfStone[i] forState:UIControlStateNormal];
-        [kindBtn setBackgroundColor:[UIColor lightGrayColor]];
-        [kindBtn addTarget:self
-                            action:@selector(filterAKind:)
-                  forControlEvents:UIControlEventTouchDown];
-        [kindBtn setTag:i];
+    
+    for (int i = 0; i < [menuTitles count]; i++) {
+        UIButton *menuBtn = [UIButton buttonWithType:UIButtonTypeSystem];
         
-        [UIView transitionWithView:self.view
-                          duration:0.8
-                           options:UIViewAnimationOptionCurveEaseIn
-                        animations:^{
-                            [self.view addSubview:kindBtn];
-                        }
-                        completion:NULL];
+        [menuBtn setFrame:CGRectMake(widthOfMenuItem * i, 0, widthOfMenuItem, MENU_ITEM_HEIGHT)];
+        [menuBtn setTitle:menuTitles[i] forState:UIControlStateNormal];
+        [menuBtn setBackgroundColor:[UIColor lightGrayColor]];
+        [menuBtn addTarget:self
+                    action:@selector(touchMenuTitle:)
+          forControlEvents:UIControlEventTouchDown];
+        [menuBtn setTag:i];
+        [self.view addSubview:menuBtn];
     }
+
+    self.tableView.tableHeaderView = menuTitleView;
+
 }
 
--(IBAction)filterAKind:(id)sender {
-    DLog(@"%d", ((UIButton*)sender).tag);
+
+
+-(IBAction) touchMenuTitle:(id)sender {
+
+    touchedMenuTitleIndex = ((UIView*)sender).tag;
+    DLog(@"%ld", ((UIButton*)sender).tag);
+    
+    NSArray *kindsOfStone = @[@"花岗岩", @"大理石", @"玄武岩", @"人造石"];
+    NSArray *colorOfStones = @[@"金黄", @"米黄", @"桃红", @"亮黄", @"翠绿"];
+    NSArray *originsOfStones = @[@"巴西", @"西班牙", @"蒙古", @"新西兰", @"法国", @"俄罗斯", @"中国", @"越南", @"澳大利亚"];
+    NSArray *menus = @[kindsOfStone, colorOfStones, originsOfStones];
+    
+    
+    NSArray *subMenu = menus[touchedMenuTitleIndex];
+    for (int j = 0; j < [subMenu count]; j++) {
+        UIButton *menuItem = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        
+        [menuItem setFrame:CGRectMake(touchedMenuTitleIndex * widthOfMenuItem, MENU_ITEM_HEIGHT * (j + 1), widthOfMenuItem, MENU_ITEM_HEIGHT)];
+        [menuItem setTitle:subMenu[j] forState:UIControlStateNormal];
+        [menuItem setBackgroundColor:[UIColor lightGrayColor]];
+        [menuItem addTarget:self
+                     action:@selector(touchMenuItem:)
+           forControlEvents:UIControlEventTouchDown];
+        [menuItem setTag:j];
+        
+        [self.view addSubview:menuItem];
+        [displayingMenuItems addObject:menuItem];
+    }
+    
+//    [UIView transitionWithView:self.view
+//                      duration:0.8
+//                       options:UIViewAnimationOptionCurveEaseIn
+//                    animations:^{
+//                        [self.view addSubview:dropDownView];
+//                    }
+//                    completion:NULL];
+    
+    
 }
+
+-(IBAction) touchMenuItem:(id)sender {
+    DLog(@"%ld | %ld", touchedMenuTitleIndex, ((UIButton*)sender).tag);
+    for (UIButton *menuItem in displayingMenuItems) {
+        [menuItem removeFromSuperview];
+    }
+    [displayingMenuItems removeAllObjects];
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -78,18 +130,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Table header delegate
+
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 4;
 }

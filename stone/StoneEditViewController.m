@@ -197,7 +197,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //    static NSString *CellIdentifier = @"Cell";
-    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%d", indexPath.row];
+    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell %ld", indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
@@ -266,7 +266,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DLog(@"deSelect %d", indexPath.row);
+    DLog(@"deSelect %ld", indexPath.row);
 }
 
 
@@ -292,7 +292,7 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    DLog(@"did select pv %d", row);
+    DLog(@"did select pv %ld", row);
     
     
     expandingLabel.text = originsOfStones[row];
