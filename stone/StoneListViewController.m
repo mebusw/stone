@@ -14,6 +14,7 @@
     NSInteger touchedMenuTitleIndex;
     NSInteger widthOfMenuItem;
     NSMutableArray *displayingMenuItems;
+    UIView *dropdownView;
 }
 
 @end
@@ -81,6 +82,9 @@
     touchedMenuTitleIndex = ((UIView*)sender).tag;
     DLog(@"%ld", ((UIButton*)sender).tag);
     
+    [dropdownView removeFromSuperview];
+
+    
     NSArray *kindsOfStone = @[@"花岗岩", @"大理石", @"玄武岩", @"人造石"];
     NSArray *colorOfStones = @[@"金黄", @"米黄", @"桃红", @"亮黄", @"翠绿"];
     NSArray *originsOfStones = @[@"巴西", @"西班牙", @"蒙古", @"新西兰", @"法国", @"俄罗斯", @"中国", @"越南", @"澳大利亚"];
@@ -88,10 +92,13 @@
     
     
     NSArray *subMenu = menus[touchedMenuTitleIndex];
+
+    dropdownView = [[UIView alloc] initWithFrame:CGRectMake(touchedMenuTitleIndex * widthOfMenuItem, MENU_ITEM_HEIGHT, widthOfMenuItem, MENU_ITEM_HEIGHT * [subMenu count])];
+    
     for (int j = 0; j < [subMenu count]; j++) {
         UIButton *menuItem = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         
-        [menuItem setFrame:CGRectMake(touchedMenuTitleIndex * widthOfMenuItem, MENU_ITEM_HEIGHT * (j + 1), widthOfMenuItem, MENU_ITEM_HEIGHT)];
+        [menuItem setFrame:CGRectMake(0, MENU_ITEM_HEIGHT * j, widthOfMenuItem, MENU_ITEM_HEIGHT)];
         [menuItem setTitle:subMenu[j] forState:UIControlStateNormal];
         [menuItem setBackgroundColor:[UIColor lightGrayColor]];
         [menuItem addTarget:self
@@ -99,27 +106,23 @@
            forControlEvents:UIControlEventTouchDown];
         [menuItem setTag:j];
         
-        [self.view addSubview:menuItem];
-        [displayingMenuItems addObject:menuItem];
+        [dropdownView addSubview:menuItem];
     }
     
-//    [UIView transitionWithView:self.view
-//                      duration:0.8
-//                       options:UIViewAnimationOptionCurveEaseIn
-//                    animations:^{
-//                        [self.view addSubview:dropDownView];
-//                    }
-//                    completion:NULL];
+    [UIView transitionWithView:self.view
+                      duration:0.8
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^{
+                        [self.view addSubview:dropdownView];
+                    }
+                    completion:NULL];
     
     
 }
 
 -(IBAction) touchMenuItem:(id)sender {
     DLog(@"%ld | %ld", touchedMenuTitleIndex, ((UIButton*)sender).tag);
-    for (UIButton *menuItem in displayingMenuItems) {
-        [menuItem removeFromSuperview];
-    }
-    [displayingMenuItems removeAllObjects];
+    [dropdownView removeFromSuperview];
 }
 
 
