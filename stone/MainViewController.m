@@ -23,6 +23,20 @@
     SlidesViewController *slideVC = [[SlidesViewController alloc] initWithFrame:CGRectMake(0, 60, 320, 60)];
     [self.view addSubview:slideVC.view];
     slideVC.images = @[@"xuanwuyan.jpg", @"jixueshi.jpg", @"dalishi.jpg"];
+    
+    UIButton *hiddenBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [hiddenBtn setFrame:CGRectMake(0, 60, 320, 60)];
+    [hiddenBtn addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:hiddenBtn];
+}
+
+-(IBAction)onClick:(id)sender {
+    DLog(@"click");
+
+    UIViewController *generalInfoVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GeneralInfo"];
+    [self.navigationController pushViewController:generalInfoVC animated:YES];
+
+    
 }
 
 - (void)didReceiveMemoryWarning

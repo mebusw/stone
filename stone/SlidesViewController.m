@@ -59,7 +59,18 @@
 }
 
 
--(void) timeToSlideImage:(NSTimer *)timer {    
+
+-(void)viewWillAppear:(BOOL)animated {
+//    [timer setFireDate:[NSDate distantPast]];
+}
+
+-(void)viewDidDisappear:(BOOL)animated {
+//    [timer setFireDate:[NSDate distantFuture]];
+}
+
+-(void) timeToSlideImage:(NSTimer *)timer {
+    //DLog(@"timeout");
+    
     self.imageOld.image = self.imageCurrent.image;
     [self.imageOld setFrame:CGRectMake(imageLeft, imageTop, imageWidth, imageHeight)];
     self.imageOld.hidden = NO;
