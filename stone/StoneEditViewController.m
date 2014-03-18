@@ -12,7 +12,7 @@
     UIPickerView *colorPicker;
     UIToolbar *colorPickerToolbar;
     NSArray *colorOfStones;
-    NSArray *originsOfSones;
+    NSArray *originsOfStones;
     BOOL isPickerHidden;
     UIPickerView *originPicker;
     UILabel *expandingLabel;
@@ -57,8 +57,8 @@
                       @"桃红",
                       @"亮黄",
                       @"翠绿"];
-    originsOfSones = @[@"巴西", @"西班牙", @"蒙古", @"新西兰", @"法国", @"俄罗斯"];
-    originPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(5, 15, 280, 216)];
+    originsOfStones = @[@"巴西", @"西班牙", @"蒙古", @"新西兰", @"法国", @"俄罗斯"];
+    originPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(5, 35, 280, 216)];
     originPicker.dataSource = (id)self;
     originPicker.delegate = (id)self;
     isPickerHidden = YES;
@@ -206,7 +206,8 @@
             if (!expandingLabel) {
                 originLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 15, 50, 22)];
                 originLabel.text = @"产地";
-                expandingLabel = [[UILabel alloc] initWithFrame:CGRectMake(278, 15, 35, 22)];
+                originLabel.textAlignment = NSTextAlignmentRight;
+                expandingLabel = [[UILabel alloc] initWithFrame:CGRectMake(270, 15, 50, 22)];
                 expandingLabel.font = [UIFont systemFontOfSize:14];
                 expandingLabel.textColor = [UIColor darkGrayColor];
                 expandingLabel.text = @"巴西";
@@ -242,11 +243,8 @@
             if (isPickerHidden) {
                 isPickerHidden = NO;
                 expandingLabel.text = @"^";
-            } else {
-                isPickerHidden = YES;
-                expandingLabel.text = @"巴西";
-                
             }
+            
             [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
         }
@@ -281,21 +279,25 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if (pickerView == originPicker) {
-        return [originsOfSones count];
+        return [originsOfStones count];
     }
     return [colorOfStones count];
 }
 
 -(UIView *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (pickerView == originPicker) {
-        return [originsOfSones objectAtIndex:row];
+        return [originsOfStones objectAtIndex:row];
     }
     return [colorOfStones objectAtIndex:row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     DLog(@"did select pv %d", row);
-    [self dismissPicker:nil];
+    
+    
+    expandingLabel.text = originsOfStones[row];
+    isPickerHidden = YES;
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 -(void) dismissPicker:(id)obj {

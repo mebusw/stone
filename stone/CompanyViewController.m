@@ -40,6 +40,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+#pragma mark - Action Sheet delegate
+- (IBAction) shareToSocialMedia:(id)sender {
+    UIActionSheet *socialMediaActionSheet = [[UIActionSheet alloc]
+                                       initWithTitle:nil
+                                       delegate:(id)self
+                                       cancelButtonTitle:@"取消"
+                                       destructiveButtonTitle:nil
+                                       otherButtonTitles: @"微信好友", @"朋友圈",nil];
+    [socialMediaActionSheet showInView:self.view];
+}
+
+
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

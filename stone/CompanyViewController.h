@@ -10,4 +10,7 @@
 
 @interface CompanyViewController : UITableViewController
 
+
+- (IBAction) shareToSocialMedia:(id)sender;
+
 @end
