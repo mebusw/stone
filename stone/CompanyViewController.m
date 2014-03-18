@@ -67,7 +67,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 4;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -93,7 +93,7 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static CGFloat heightOfRows[] = {120, 46, 35, 150};
+    static CGFloat heightOfRows[] = {120, 46, 35, 150, 46};
     return heightOfRows[indexPath.row];
 }
 

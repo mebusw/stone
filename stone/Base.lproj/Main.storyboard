@@ -874,6 +874,23 @@
                                     <segue destination="szH-Ne-9Ba" kind="push" id="6Do-Fj-PEo"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell4" textLabel="rzz-b3-biQ" rowHeight="45" style="IBUITableViewCellStyleDefault" id="duW-Sh-H4W">
+                                <rect key="frame" x="0.0" y="437" width="320" height="45"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="duW-Sh-H4W" id="MWl-Bs-3o5">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="公司网站 www.abc.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rzz-b3-biQ">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="BJy-xu-XI6" id="s8D-dr-v02"/>
