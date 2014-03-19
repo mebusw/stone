@@ -22,7 +22,7 @@
     
     SlidesViewController *slideVC = [[SlidesViewController alloc] initWithFrame:CGRectMake(0, 60, 320, 60)];
     [self.view addSubview:slideVC.view];
-    slideVC.images = @[@"xuanwuyan.jpg", @"jixueshi.jpg", @"dalishi.jpg"];
+    slideVC.images = @[@"wanlongshiye.jpg", @"shengdashiye.jpg"];
     
     UIButton *hiddenBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [hiddenBtn setFrame:CGRectMake(0, 60, 320, 60)];

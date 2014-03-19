@@ -197,25 +197,27 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //    static NSString *CellIdentifier = @"Cell";
-    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell %ld", indexPath.row];
+    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%ld", indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     switch (indexPath.row) {
         case 1: {
             if (!expandingLabel) {
-                originLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 15, 50, 22)];
+                originLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, 50, 22)];
                 originLabel.text = @"产地";
-                originLabel.textAlignment = NSTextAlignmentRight;
-                expandingLabel = [[UILabel alloc] initWithFrame:CGRectMake(270, 15, 50, 22)];
+                expandingLabel = [[UILabel alloc] initWithFrame:CGRectMake(255, 15, 50, 22)];
+                expandingLabel.textAlignment = NSTextAlignmentRight;
                 expandingLabel.font = [UIFont systemFontOfSize:14];
                 expandingLabel.textColor = [UIColor darkGrayColor];
-                expandingLabel.text = @"巴西";
+                expandingLabel.text = @"蒙古";
+
+
             }
-            
-                [cell addSubview:expandingLabel];
-                [cell addSubview:originLabel];
-                [cell addSubview:originPicker];
+            [cell addSubview:expandingLabel];
+            [cell addSubview:originLabel];
+            [cell addSubview:originPicker];
+            [originPicker setHidden:isPickerHidden];
 
             break;
         }
@@ -243,6 +245,8 @@
             if (isPickerHidden) {
                 isPickerHidden = NO;
                 expandingLabel.text = @"^";
+            } else {
+                isPickerHidden = YES;
             }
             
             [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];

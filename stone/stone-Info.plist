@@ -55,7 +55,7 @@
 		<key>UINavigationBar</key>
 		<dict>
 			<key>Style</key>
-			<string>UIBarStyleBlack</string>
+			<string>UIBarStyleDefault</string>
 			<key>Translucent</key>
 			<false/>
 		</dict>
