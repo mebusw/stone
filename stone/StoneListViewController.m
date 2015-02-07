@@ -80,7 +80,7 @@
 -(IBAction) touchMenuTitle:(id)sender {
 
     touchedMenuTitleIndex = ((UIView*)sender).tag;
-    DLog(@"%ld", ((UIButton*)sender).tag);
+    DLog(@"%d", ((UIButton*)sender).tag);
     
     [dropdownView removeFromSuperview];
 
@@ -121,7 +121,7 @@
 }
 
 -(IBAction) touchMenuItem:(id)sender {
-    DLog(@"%ld | %ld", touchedMenuTitleIndex, ((UIButton*)sender).tag);
+    DLog(@"%d | %d", touchedMenuTitleIndex, ((UIButton*)sender).tag);
     [dropdownView removeFromSuperview];
 }
 

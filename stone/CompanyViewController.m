@@ -83,7 +83,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
-        case 2: {
+        case 3: {
             /* This only works on real devices. */
             NSString *num = [[NSString alloc] initWithFormat:@"telprompt://%@", @"13621766604"];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]];
